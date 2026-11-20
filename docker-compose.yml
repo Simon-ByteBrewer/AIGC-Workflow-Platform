@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: seedance-app
+    restart: unless-stopped
+    ports:
+      - "80:8000"
+    volumes:
+      - ./uploads:/app/uploads
+    environment:
+      - PYTHONUNBUFFERED=1

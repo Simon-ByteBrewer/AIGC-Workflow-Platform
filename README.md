@@ -1,57 +1,19 @@
-# React + TypeScript + Vite
+# 整体框架：
+- 剧本-分集扩写-分镜生成-调用自建素材库-人物选型-角色修改生图-素材人工审核-预设模块-生视频分镜批量生成-生成素材人工审核-后处理（音色tts、配音、混剪、段落补帧、超分）
+- 包含无限画布
+- 支持seedance2.0 多模态参考生视频全参数web化
+- 支持常见素材创作的各分类提示词分区和拼接，支持通过 @ 方式指定参考元素
+- 自带素材库构建
+- 素材库支持分类、TOS一键存储，支持素材库已有素材添加至生视频任务
+- 支持本地上传素材图、视频、音频
+- 支持公共素材库调用（含离线全量assetid）
+- 预留开白私有素材库和人脸接口（非公开）
+- 支持异步任务提交、定时查询任务状态和预览下载
+- 支持对接前端分镜生成倒入
+- 使用Zustand页面缓存，在当次任务提交前缓存页面输入内容，避免误刷新，丢失已输入内容。注意，提交任务后会刷新页面包括重要的api key，如需要常驻密钥，请点击保存配置按钮
+- 数据面Api key和控制面ak sk支持常驻使用和临时使用
+- Reference Materials和素材库互通，并支持预览和顺序标识
+  
+## 包含无限画布
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  extends: [
-    // other configs...
-    // Enable lint rules for React
-    reactX.configs['recommended-typescript'],
-    // Enable lint rules for React DOM
-    reactDom.configs.recommended,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 已包含一键部署脚本，使用Docker + Docker Compose (Nginx + Uvicorn/FastAPI) 进行容器化分离部署

@@ -1,4 +1,5 @@
-# 整体框架：
+整体框架：
+
 - 剧本-分集扩写-分镜生成-调用自建素材库-人物选型-角色修改生图-素材人工审核-预设模块-生视频分镜批量生成-生成素材人工审核-后处理（音色tts、配音、混剪、段落补帧、超分）
 - 包含无限画布
 - 支持seedance2.0 多模态参考生视频全参数web化
@@ -14,6 +15,6 @@
 - 数据面Api key和控制面ak sk支持常驻使用和临时使用
 - Reference Materials和素材库互通，并支持预览和顺序标识
   
-## 包含无限画布
+包含无限画布
 
-## 已包含一键部署脚本，使用Docker + Docker Compose (Nginx + Uvicorn/FastAPI) 进行容器化分离部署
+已包含一键部署脚本，使用Docker + Docker Compose (Nginx + Uvicorn/FastAPI) 进行容器化分离部署
